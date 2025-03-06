@@ -11,4 +11,4 @@ page-layout: full
 title-block-banner: true
 ---
 
-
+<!-- __terminal, python interpreter, jupyter interpreter $\to$ ls_gmgu env.__ -->
