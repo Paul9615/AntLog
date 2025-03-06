@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="데이터-로드와-데이터-정보-확인" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="데이터-로드와-데이터-정보-확인"><span class="header-section-number">3</span> 데이터 로드와 데이터 정보 확인</h2>
-<div id="6351e227" class="cell" data-execution_count="1">
+<div id="71943c31" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -283,14 +283,14 @@ max    2009.000000  </code></pre>
 </div>
 </div>
 <p>감사하게도 palmerpenguins 데이터는 남극의 각 지역에 대한 펭귄 종별 특징 데이터가 담겨있다.</p>
-<p>이를 이용하여 고객의 요구사항에 맞는 펭귄을 찾고 많이 서식하고 있는 정보를 알아보자</p>
+<p>이를 이용하여 고객의 요구사항에 맞는 펭귄과 펭귄 종별 많이 서식하고 있는 정보를 알아보기로 하였다.</p>
 <p>먼저, 데이터를 불러오고 결측치(missing value)를 처리한다.</p>
 <p>결측치가 담긴 레코드가 344개 중 11개로 분석에 큰 지장이 없을 것이 없을 것이라 판단하여, 결측치가 포함된 레코드를 일괄적으로 처리하였다.</p>
 </section>
 <section id="q1-펭귄의-종별-성비는-어떻게-되어있을까" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="q1-펭귄의-종별-성비는-어떻게-되어있을까"><span class="header-section-number">4</span> [Q1] 펭귄의 종별 성비는 어떻게 되어있을까?</h2>
 <p>[section 1]에 언급한 것과 같이 본사는 ESG 경영을 기반으로 지속가능한 펭귄 밀렵을 지향한다. 이에 펭귄의 각 종별 성비를 파악하기로 했다.</p>
-<div id="7590def0" class="cell" data-execution_count="2">
+<div id="fecfddf5" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_s(df, spec):</span>
@@ -329,7 +329,7 @@ Difference of ratio between male and female: 0.000</code></pre>
 <section id="q2-펭귄의-각-개체에-대한-지역별-개체수는-어떻게-되어있는가" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="q2-펭귄의-각-개체에-대한-지역별-개체수는-어떻게-되어있는가"><span class="header-section-number">5</span> [Q2] 펭귄의 각 개체에 대한 지역별 개체수는 어떻게 되어있는가?</h2>
 <p>다음으로 펭귄의 각 개체에 대한 지역별 개체수를 알아보자.</p>
-<div id="15381495" class="cell" data-execution_count="3">
+<div id="fb65c8da" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lands <span class="op">=</span> <span class="bu">list</span>(pen[<span class="st">'island'</span>].value_counts().keys())</span>
@@ -368,7 +368,7 @@ Number of Chinstrap in Torgersen: 0
 <p>고객의 요구사항인 부리의 길이가 긴 펭귄이 어떤 종인지 알아보자.</p>
 <p>우리 펭귄유괴단은 각 펭귄의 종별로 부리 길이가 어떻게 분포되어 있는지 확인해보기로 했다.</p>
 <p>이를 위해, 평균을 기준으로 각 종별로 부리 길이가 긴 개체수와 짧은 개체수를 알아보기로 했다.</p>
-<div id="6ef48a15" class="cell" data-execution_count="4">
+<div id="7c14cb37" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> specs:</span>
