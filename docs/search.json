@@ -11,7 +11,7 @@
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "import numpy as np\nnp.arange(10)\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])"
   },
   {
     "objectID": "about.html",

@@ -1,0 +1,12 @@
+{
+  "hash": "4dcc3a9fc074b493c880766e861ba908",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Harlow Malloc\"\ndate: \"2025-03-06\"\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n::: {#48fe2f68 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nnp.arange(10)\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
