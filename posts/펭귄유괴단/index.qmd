@@ -1,7 +1,7 @@
 ---
 title: "펭귄유괴단"
 date: "2025-03-06"
-author: "구경민, 구교빈, 권서연"
+author: "1조: 구경민, 구교빈, 권서연"
 categories: [code, analysis]
 format: 
     html:
@@ -12,13 +12,9 @@ format:
         search: true    
         number-sections: true
         highlight-style: a11y
-
+image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuhrP3xaNK-ni0uifTDiiUe9Ly3x3gtNtImA&s
 jupyter: python3
 ---
-
-1조: 구경민, 구교빈, 권서연
-
-작성일: 2025년 3월 06일
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuhrP3xaNK-ni0uifTDiiUe9Ly3x3gtNtImA&s)
 
@@ -37,13 +33,13 @@ jupyter: python3
 
 펭귄유괴단은 지속가능한 밀렵을 위해 펭귄의 종별 성비가 맞게 밀렵을 수행한다.
 
-얼마 전, 펭귄의 긴 부리를 이용하여 칼을 만들겠다는 고객의 요구사항을 받았다.
+얼마 전, 펭귄의 긴 부리를 이용하여 칼을 만들겠다는 고객의 요청청을 받았다.
 
 이에, 펭귄유괴단은 부리가 긴 펭귄의 종이 무엇인지, 그 펭귄이 어디에 많이 서식하고 있는지, 그리고 지속가능한 밀렵을 위해 그 종의 성비가 어떤지 확인하여 사냥의 목표를 설정하려고 한다.
 
 **Summary**
 
--   펭귄의 종 별 성비는 어떻게 되는가?
+-   펭귄의 종별 성비는 어떻게 되는가?
 
 -   펭귄의 각 종에 대한 지역별 개체수는 어떻게 되어있는가?
 

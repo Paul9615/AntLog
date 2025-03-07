@@ -1,0 +1,49 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"켈로그\"\n",
+        "author: \"주인장\"\n",
+        "date: \"2025-03-07\"\n",
+        "categories: [others]\n",
+        "image: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ZasSsD_Q2y_ClweB-E0ERrh3uA2ic2VXyQ&s\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# 제목이 왜 이렇나요?\n",
+        "포스트니까요\n",
+        "\n",
+        "# 이건 뭔가요?\n",
+        "\n",
+        "연습이거든여\n"
+      ],
+      "id": "b15b5fac"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "home = np.arange(1,10,4)\n",
+        "print(home*4)"
+      ],
+      "id": "718345fa",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "myenv",
+      "language": "python",
+      "display_name": "Python (myenv)",
+      "path": "C:\\Users\\USER\\AppData\\Roaming\\jupyter\\kernels\\myenv"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

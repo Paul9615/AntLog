@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "gm-blog",
+    "title": "AntLog",
     "section": "",
-    "text": "펭귄유괴단\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nMar 6, 2025\n\n\n구경민, 구교빈, 권서연\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 3, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "펭귄유괴단\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nMar 6, 2025\n\n\n1조: 구경민, 구교빈, 권서연\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMar 3, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -16,9 +16,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Gyeongmin Gu",
     "section": "",
-    "text": "About this blog"
+    "text": "Hi there : )\nMy name is Gyeongmin Gu!"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -95,7 +95,7 @@
     "href": "posts/펭귄유괴단/index.html#문제-정의",
     "title": "펭귄유괴단",
     "section": "2 문제 정의",
-    "text": "2 문제 정의\n펭귄유괴단은 대한민국 경기도 안성시에 위치하며, ESG 경영을 기반의 펭귄 밀렵을 통해 고객만족을 추구하는 기업이다.\n펭귄유괴단은 지속가능한 밀렵을 위해 펭귄의 종별 성비가 맞게 밀렵을 수행한다.\n얼마 전, 펭귄의 긴 부리를 이용하여 칼을 만들겠다는 고객의 요구사항을 받았다.\n이에, 펭귄유괴단은 부리가 긴 펭귄의 종이 무엇인지, 그 펭귄이 어디에 많이 서식하고 있는지, 그리고 지속가능한 밀렵을 위해 그 종의 성비가 어떤지 확인하여 사냥의 목표를 설정하려고 한다.\nSummary\n\n펭귄의 종 별 성비는 어떻게 되는가?\n펭귄의 각 종에 대한 지역별 개체수는 어떻게 되어있는가?\n펭귄의 종별 부리 길이가 평균보다 긴 개체 수 그리고 짧은 수는 어떻게 되어있는가?"
+    "text": "2 문제 정의\n펭귄유괴단은 대한민국 경기도 안성시에 위치하며, ESG 경영을 기반의 펭귄 밀렵을 통해 고객만족을 추구하는 기업이다.\n펭귄유괴단은 지속가능한 밀렵을 위해 펭귄의 종별 성비가 맞게 밀렵을 수행한다.\n얼마 전, 펭귄의 긴 부리를 이용하여 칼을 만들겠다는 고객의 요청청을 받았다.\n이에, 펭귄유괴단은 부리가 긴 펭귄의 종이 무엇인지, 그 펭귄이 어디에 많이 서식하고 있는지, 그리고 지속가능한 밀렵을 위해 그 종의 성비가 어떤지 확인하여 사냥의 목표를 설정하려고 한다.\nSummary\n\n펭귄의 종별 성비는 어떻게 되는가?\n펭귄의 각 종에 대한 지역별 개체수는 어떻게 되어있는가?\n펭귄의 종별 부리 길이가 평균보다 긴 개체 수 그리고 짧은 수는 어떻게 되어있는가?"
   },
   {
     "objectID": "posts/펭귄유괴단/index.html#데이터-로드와-데이터-정보-확인",

@@ -3,14 +3,14 @@ project:
   output-dir: docs
 
 website:
-  title: "gm-blog"
+  title: "AntLog"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/Paul9615
+      - icon: linkedin
+        href: https://www.linkedin.com/in/gyeong-min-gu-0183041a8
 format:
   html:
     theme:

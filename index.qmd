@@ -1,5 +1,5 @@
 ---
-title: "gm-blog"
+title: "AntLog"
 listing:
   contents: posts
   sort: "date desc"

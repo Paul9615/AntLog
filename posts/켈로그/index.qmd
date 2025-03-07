@@ -1,0 +1,22 @@
+---
+title: "켈로그"
+author: "주인장"
+date: "2025-03-07"
+categories: [others]
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3ZasSsD_Q2y_ClweB-E0ERrh3uA2ic2VXyQ&s"
+---
+
+# 제목이 왜 이렇나요?
+포스트니까요
+
+# 이건 뭔가요?
+
+연습이거든여
+
+```{python}
+import numpy as np
+
+home = np.arange(1,10,4)
+print(home*4)
+
+```
