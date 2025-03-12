@@ -20,7 +20,7 @@
         "\n",
         "연습이거든여\n"
       ],
-      "id": "b15b5fac"
+      "id": "e3d79d48"
     },
     {
       "cell_type": "code",
@@ -31,7 +31,7 @@
         "home = np.arange(1,10,4)\n",
         "print(home*4)"
       ],
-      "id": "718345fa",
+      "id": "301f1c8d",
       "execution_count": null,
       "outputs": []
     }

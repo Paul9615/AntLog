@@ -1,0 +1,225 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"펭귄유괴단\"\n",
+        "date: \"2025-03-06\"\n",
+        "author: \"1조: 구경민, 구교빈, 권서연\"\n",
+        "categories: [code, analysis]\n",
+        "format: \n",
+        "    html:\n",
+        "        toc: true\n",
+        "        toc-depth: 3\n",
+        "        theme: cosmo\n",
+        "        code-fold:  true\n",
+        "        search: true    \n",
+        "        number-sections: true\n",
+        "        highlight-style: a11y\n",
+        "image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuhrP3xaNK-ni0uifTDiiUe9Ly3x3gtNtImA&s\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "\n",
+        "![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuhrP3xaNK-ni0uifTDiiUe9Ly3x3gtNtImA&s)\n",
+        "\n",
+        "## Contents\n",
+        "\n",
+        "1.  문제 정의\n",
+        "2.  데이터 로드와 데이터 정보 확인\n",
+        "3.  \\[Q1\\] 펭귄의 개체별 성비는 어떻게 되어있을까?\n",
+        "4.  \\[Q2\\] 펭귄의 각 개체에 대한 지역별 개체수는 어떻게 되어있는가?\n",
+        "5.  \\[Q3\\] 펭귄의 종별 부리 길이 분포는 어떻게 구성되어 있는가?\n",
+        "6.  결론\n",
+        "\n",
+        "## 문제 정의\n",
+        "\n",
+        "**펭귄유괴단**은 대한민국 경기도 안성시에 위치하며, ESG 경영을 기반의 펭귄 밀렵을 통해 고객만족을 추구하는 기업이다.\n",
+        "\n",
+        "펭귄유괴단은 지속가능한 밀렵을 위해 펭귄의 종별 성비가 맞게 밀렵을 수행한다.\n",
+        "\n",
+        "얼마 전, 펭귄의 긴 부리를 이용하여 칼을 만들겠다는 고객의 요청청을 받았다.\n",
+        "\n",
+        "이에, 펭귄유괴단은 부리가 긴 펭귄의 종이 무엇인지, 그 펭귄이 어디에 많이 서식하고 있는지, 그리고 지속가능한 밀렵을 위해 그 종의 성비가 어떤지 확인하여 사냥의 목표를 설정하려고 한다.\n",
+        "\n",
+        "**Summary**\n",
+        "\n",
+        "-   펭귄의 종별 성비는 어떻게 되는가?\n",
+        "\n",
+        "-   펭귄의 각 종에 대한 지역별 개체수는 어떻게 되어있는가?\n",
+        "\n",
+        "-   펭귄의 종별 부리 길이가 평균보다 긴 개체 수 그리고 짧은 수는 어떻게 되어있는가?\n",
+        "\n",
+        "## 데이터 로드와 데이터 정보 확인\n"
+      ],
+      "id": "b2f2fb9c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "from palmerpenguins import load_penguins\n",
+        "\n",
+        "pen = load_penguins()\n",
+        "pen = pen.dropna() # processing the missing value\n",
+        "print(pen.info()) # dataframe information\n",
+        "print(pen.describe()) # summary statistics"
+      ],
+      "id": "ac3ab620",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "감사하게도 palmerpenguins 데이터는 남극의 각 지역에 대한 펭귄 종별 특징 데이터가 담겨있다.\n",
+        "\n",
+        "이를 이용하여 고객의 요구사항에 맞는 펭귄과 펭귄 종별 많이 서식하고 있는 정보를 알아보기로 하였다.\n",
+        "\n",
+        "먼저, 데이터를 불러오고 결측치(missing value)를 처리한다.\n",
+        "\n",
+        "결측치가 담긴 레코드가 344개 중 11개로 분석에 큰 지장이 없을 것이 없을 것이라 판단하여, 결측치가 포함된 레코드를 일괄적으로 처리하였다.\n",
+        "\n",
+        "## \\[Q1\\] 펭귄의 종별 성비는 어떻게 되어있을까?\n",
+        "\n",
+        "\\[section 1\\]에 언급한 것과 같이 본사는 ESG 경영을 기반으로 지속가능한 펭귄 밀렵을 지향한다. 이에 펭귄의 각 종별 성비를 파악하기로 했다.\n"
+      ],
+      "id": "281ff21f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "def count_s(df, spec):\n",
+        "    total = df.loc[df['species'] == spec].shape[0]\n",
+        "    male = df.loc[(df['species'] == spec) & (df['sex'] == 'male'),:]\n",
+        "    female = df.loc[(df['species'] == spec) & (df['sex'] == 'female'),:]\n",
+        "    return male.shape[0] / total, female.shape[0] / total   \n",
+        "\n",
+        "specs = list(pen['species'].value_counts().keys())\n",
+        "\n",
+        "for s in specs:\n",
+        "    print(s)\n",
+        "    print(f\"Male: {count_s(pen, s)[0]*100:.3f}% | Female: {count_s(pen, s)[1]*100:.3f}%\")\n",
+        "    print(f\"Difference of ratio between male and female: {count_s(pen, s)[0]-count_s(pen, s)[1]:.3f}\")"
+      ],
+      "id": "90b59ea4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "위의 코드에서 `count_s`는 각 종별 성비를 계산하는 함수이다.\n",
+        "\n",
+        "즉, 먼저 각 종에 대한 이름을 `specs`라는 변수에 list로 담고, `count_s`를 종 별로 반복한다.\n",
+        "\n",
+        "이를 통해 다음과 같이 알 수 있었다.\n",
+        "\n",
+        "**Summary**\n",
+        "\n",
+        "-   펭귄의 각 종에 대한 성비는 대부분 5:5이지만, Gentoo는 수컷 개체의 비중이 암컷보다 약 2.5% 높다.\n",
+        "\n",
+        "## \\[Q2\\] 펭귄의 각 개체에 대한 지역별 개체수는 어떻게 되어있는가?\n",
+        "\n",
+        "다음으로 펭귄의 각 개체에 대한 지역별 개체수를 알아보자.\n"
+      ],
+      "id": "abf81c29"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "lands = list(pen['island'].value_counts().keys())\n",
+        "for s in specs:\n",
+        "    for l in lands:\n",
+        "        spec_land = pen.loc[(pen['species'] == s) & (pen['island'] == l)].shape[0]    \n",
+        "        print(f'Number of {s} in {l}: {spec_land}')\n",
+        "    print('---------------------------------')"
+      ],
+      "id": "53b7f259",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "위의 코드 중 변수 `lands`는 각 종별 펭귄이 서식하고 있는 섬의 이름을 담은 list이다.\n",
+        "\n",
+        "이를 이용하여 각 종이 섬별 서식하고 있는 개체 수에 대해서 다음과 같이 알 수 있었다.\n",
+        "\n",
+        "**Summary**\n",
+        "\n",
+        "-   Adelie는 각 섬별로 고르게 분포되어 있는 것으로 보여지지만, Dream 섬에 가장 많이 서식하고 있다.\n",
+        "-   Gentoo는 Biscoe 섬에 모두 서식하고 있다.\n",
+        "-   Chinstrap은 모두 Dream 섬에 모두 서식하고 있다.\n",
+        "\n",
+        "## \\[Q3\\] 펭귄의 종별 부리 길이 분포는 어떻게 구성되어 있는가?\n",
+        "\n",
+        "고객의 요구사항인 부리의 길이가 긴 펭귄이 어떤 종인지 알아보자.\n",
+        "\n",
+        "우리 펭귄유괴단은 각 펭귄의 종별로 부리 길이가 어떻게 분포되어 있는지 확인해보기로 했다.\n",
+        "\n",
+        "이를 위해, 평균을 기준으로 각 종별로 부리 길이가 긴 개체수와 짧은 개체수를 알아보기로 했다.\n"
+      ],
+      "id": "2a63962f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "for s in specs:\n",
+        "    s_short = pen.loc[(pen['species'] == s) & (pen['bill_length_mm'] < np.mean(pen['bill_length_mm']))].shape[0]\n",
+        "    s_long = pen.loc[(pen['species'] == s) & (pen['bill_length_mm'] > np.mean(pen['bill_length_mm']))].shape[0]  \n",
+        "    \n",
+        "    print(f'{s} | # of short bill length: {s_short} |  # of long bill length: {s_long}')"
+      ],
+      "id": "0dc22b72",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "마찬가지로 \\[section 3\\]에서 만든 종별 이름이 담긴 list인 `specs`변수를 이용하여 종 별로 부리 평균 길이보다 짧은 개체 수 (`s_short`)와 긴 개체 수 `s_long` 을 구하였다.\n",
+        "\n",
+        "이를 통해 다음과 같이 알 수 있었다.\n",
+        "\n",
+        "**Summary**\n",
+        "\n",
+        "-   Adelie는 다른 종보다 부리 길이 평균이 보다 짧은 종이 많았고, Gentoo는 다른 종들보다 평균보다 긴 부리의 개체 수가 많았다.\n",
+        "\n",
+        "-   즉, 고객의 요구사항에 맞는 펭귄은 Gentoo일 것이다.\n",
+        "\n",
+        "## 결론\n",
+        "\n",
+        "우리 펭귄유괴단은 고객의 요구사항에 맞는 펭귄을 밀렵을 위해 위의 분석에 따라 다음과 같이 밀렵 계획을 수립하였다.\n",
+        "\n",
+        "-   목표 종: Gentoo\n",
+        "\n",
+        "-   위치: Biscoe 섬\n",
+        "\n",
+        "목표 종인 Gentoo는 수컷의 비중이 더 높은 성비이므로 지속가능한 밀렵을 위해 수컷을 조금 더 많이 사냥하는 것으로 한다."
+      ],
+      "id": "4580c2c9"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\DS\\Python313\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
